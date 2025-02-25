@@ -46,7 +46,7 @@ export const P2PPage = () => {
       <P2PBalance />
       <P2PFilters />
 
-      <div className="pb-20">
+      <div className="px-4 pb-20 space-y-4">
         <P2PAdvertiserCard
           name="Mariana Rueda"
           isFollowing={true}

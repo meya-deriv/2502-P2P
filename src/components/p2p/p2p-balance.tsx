@@ -1,4 +1,4 @@
-import { Typography, SegmentedControlSingleChoice } from "@deriv-com/quill-ui";
+import { Text, SegmentedControlSingleChoice } from "@deriv-com/quill-ui";
 import { Info } from "lucide-react";
 
 interface P2PBalanceProps {
@@ -14,14 +14,14 @@ export const P2PBalance = ({
     <div className="flex items-center justify-between p-4 bg-white">
       <div>
         <div className="flex items-center gap-1">
-          <Typography size="sm" color="secondary">
+          <Text size="sm" color="secondary">
             P2P balance
-          </Typography>
+          </Text>
           <Info className="h-4 w-4 text-gray-600" />
         </div>
-        <Typography size="xl" bold={true} className="mt-1">
+        <Text size="xl" bold={true} className="mt-1">
           {currency} {balance}
-        </Typography>
+        </Text>
       </div>
       <div>
         <SegmentedControlSingleChoice

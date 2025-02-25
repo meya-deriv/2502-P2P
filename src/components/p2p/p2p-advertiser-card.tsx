@@ -1,4 +1,4 @@
-import { Button, Typography } from "@deriv-com/quill-ui";
+import { Button, Text } from "@deriv-com/quill-ui";
 import { Avatar } from "@/components/ui/avatar";
 
 interface P2PAdvertiserCardProps {
@@ -28,7 +28,7 @@ export const P2PAdvertiserCard = ({
     <div className="p-4 bg-white rounded-[4px] border border-[#DEE2E6]">
       <div className="flex items-center gap-2 mb-2">
         <Avatar text={name} size="sm" />
-        <Typography size="sm">{name}</Typography>
+        <Text size="sm">{name}</Text>
         {isFollowing && (
           <span className="text-xs text-[#85ACB0] border border-[#85ACB0] rounded px-2 py-0.5">
             Following
@@ -39,20 +39,20 @@ export const P2PAdvertiserCard = ({
       <div className="flex items-center gap-3 text-sm text-gray-600">
         <div className="flex items-center gap-1">
           <span>⭐</span>
-          <Typography size="xs">{rating}</Typography>
+          <Text size="xs">{rating}</Text>
         </div>
-        <Typography size="xs">•</Typography>
-        <Typography size="xs">{orders} orders</Typography>
-        <Typography size="xs">•</Typography>
-        <Typography size="xs">{completion}% completion</Typography>
+        <Text size="xs">•</Text>
+        <Text size="xs">{orders} orders</Text>
+        <Text size="xs">•</Text>
+        <Text size="xs">{completion}% completion</Text>
       </div>
 
-      <Typography size="lg" className="font-bold mt-4">
+      <Text size="lg" bold className="mt-4">
         {rate}
-      </Typography>
-      <Typography size="xs" color="secondary" className="mt-1">
+      </Text>
+      <Text size="xs" color="secondary" className="mt-1">
         Limits: {limits}
-      </Typography>
+      </Text>
 
       <div className="flex items-center gap-2 mt-4 text-sm text-gray-600">
         <svg
@@ -69,13 +69,13 @@ export const P2PAdvertiserCard = ({
           <circle cx="12" cy="12" r="10" />
           <polyline points="12 6 12 12 16 14" />
         </svg>
-        <Typography size="xs">{time}</Typography>
+        <Text size="xs">{time}</Text>
       </div>
 
       <div className="flex items-center justify-between mt-4">
-        <Typography size="xs" color="secondary">
+        <Text size="xs" color="secondary">
           {paymentMethods.join(" | ")}
-        </Typography>
+        </Text>
         <Button variant="primary" size="lg" className="rounded-full px-8">
           Buy USD
         </Button>

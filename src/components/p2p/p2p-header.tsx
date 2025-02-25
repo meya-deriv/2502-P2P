@@ -1,4 +1,4 @@
-import { Button, Typography } from "@deriv-com/quill-ui";
+import { Button, Text } from "@deriv-com/quill-ui";
 import { ArrowLeft, Presentation } from "lucide-react";
 
 export const P2PHeader = () => {
@@ -8,9 +8,9 @@ export const P2PHeader = () => {
         <Button variant="ghost" isIconButton noBorder className="border-0">
           <ArrowLeft className="h-6 w-6" />
         </Button>
-        <Typography size="xl" bold>
+        <Text size="xl" bold>
           Deriv P2P
-        </Typography>
+        </Text>
       </div>
       <Button variant="ghost" isIconButton noBorder className="border-0">
         <Presentation className="h-6 w-6" />
