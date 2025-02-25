@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@deriv-com/quill-ui": "^1.24.4",
+    "@fontsource/inter": "^5.1.1",
     "@hookform/resolvers": "^3.6.0",
     "@supabase/supabase-js": "^2.45.6",
     "class-variance-authority": "^0.7.0",
