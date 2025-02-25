@@ -7,7 +7,7 @@ import { P2PNavigation } from "./p2p-navigation";
 
 export const P2PPage = () => {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const token =
     "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwiemlwIjoiREVGIn0.d_M9RCnmi33XYzBwsDeAOFFJARe-lSW34RZdmpj-bcMslJqoKIiqVohwgLRmavsW7GzBg7km-WVJI6dUw5_k6Cjp3FINOdwU.QsQOUPGVZ6kZ72cC3b477Q.W10om_jRQ9tHBdIkITikNCyk54xhxSx_2Li_-K40JUKKaLqHqI_EXFGyyuMIoBku3dsMcHUtIqAD1BN-z_STTJVVxFYWSuERGrSac8i8z-KTF5Y8uLBq6pMdyRYeYjsdsvdmb_b5k1tv-Yy22MVhQQ.hYUcxGDr9oJyk7rz_JUQ2R02eIq9110q0KHuGs3cUj8";
