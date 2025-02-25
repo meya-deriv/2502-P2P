@@ -1,4 +1,5 @@
 import { Button, Typography } from "@deriv-com/quill-ui";
+import { Avatar } from "@/components/ui/avatar";
 
 interface P2PAdvertiserCardProps {
   name: string;
@@ -26,11 +27,7 @@ export const P2PAdvertiserCard = ({
   return (
     <div className="p-4 bg-white rounded-[4px] border border-[#DEE2E6]">
       <div className="flex items-center gap-2 mb-2">
-        <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
-          <Typography size="sm" className="font-bold">
-            M
-          </Typography>
-        </div>
+        <Avatar text={name} size="sm" />
         <Typography size="sm">{name}</Typography>
         {isFollowing && (
           <span className="text-xs text-[#85ACB0] border border-[#85ACB0] rounded px-2 py-0.5">
