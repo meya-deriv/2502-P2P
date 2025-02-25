@@ -1,4 +1,4 @@
-import { Button, Text } from "@deriv-com/quill-ui";
+import { Button, Text, Tag } from "@deriv-com/quill-ui";
 import { Avatar } from "@/components/ui/avatar";
 
 interface P2PAdvertiserCardProps {
@@ -30,9 +30,13 @@ export const P2PAdvertiserCard = ({
         <Avatar text={name} size="sm" />
         <Text size="sm">{name}</Text>
         {isFollowing && (
-          <span className="text-xs text-[#85ACB0] border border-[#85ACB0] rounded px-2 py-0.5">
-            Following
-          </span>
+          <Tag
+            className="custom-tag-without-icon-outline"
+            variant="outline"
+            color="success"
+            label="Following"
+            size="xs"
+          />
         )}
       </div>
 
@@ -73,10 +77,10 @@ export const P2PAdvertiserCard = ({
       </div>
 
       <div className="flex items-center justify-between mt-4">
-        <Text size="xs" color="secondary">
+        <Text size="sm" color="secondary">
           {paymentMethods.join(" | ")}
         </Text>
-        <Button variant="primary" size="lg" className="rounded-full px-8">
+        <Button variant="primary" size="md">
           Buy USD
         </Button>
       </div>

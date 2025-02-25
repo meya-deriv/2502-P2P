@@ -12,8 +12,7 @@ export const P2PFilters = () => {
           { value: "USD", text: "USD" },
           { value: "EUR", text: "EUR" },
         ]}
-        className="flex-1"
-        inputSize="lg"
+        inputSize="sm"
       />
       <InputDropdown
         value="all"
@@ -24,14 +23,13 @@ export const P2PFilters = () => {
           { value: "paypal", text: "PayPal" },
           { value: "neteller", text: "Neteller" },
         ]}
-        className="flex-1"
-        inputSize="lg"
+        inputSize="sm"
       />
-      <Button variant="ghost" isIconButton>
-        <Search className="h-5 w-5" />
+      <Button variant="ghost" isIconButton size="md">
+        <Search className="h-4 w-4" />
       </Button>
-      <Button variant="ghost" isIconButton>
-        <SlidersHorizontal className="h-5 w-5" />
+      <Button variant="ghost" isIconButton size="md">
+        <SlidersHorizontal className="h-4 w-4" />
       </Button>
     </div>
   );
