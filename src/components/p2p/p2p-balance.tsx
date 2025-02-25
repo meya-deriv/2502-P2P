@@ -1,3 +1,6 @@
+import { Text, SegmentedControlSingleChoice } from "@deriv-com/quill-ui";
+import { Info } from "lucide-react";
+
 interface P2PBalanceProps {
   balance: string;
   currency?: string;
@@ -8,34 +11,29 @@ export const P2PBalance = ({
   currency = "USD",
 }: P2PBalanceProps) => {
   return (
-    <div className="p-4 bg-white">
-      <div className="flex items-center gap-1 text-sm text-gray-600">
-        <span>P2P balance</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 16v-4M12 8h.01" />
-        </svg>
+    <div className="flex items-center justify-between p-4 bg-white">
+      <div>
+        <div className="flex items-center gap-1">
+          <Text size="sm" color="secondary">
+            P2P balance
+          </Text>
+          <Info className="h-4 w-4 text-gray-600" />
+        </div>
+        <Text size="xl" bold={true} className="mt-1">
+          {currency} {balance}
+        </Text>
       </div>
-      <div className="text-2xl font-bold mt-1">
-        {currency} {balance}
-      </div>
-      <div className="flex gap-2 mt-4">
-        <button className="flex-1 bg-[#ff444f] text-white py-2 rounded font-medium">
-          Buy
-        </button>
-        <button className="flex-1 bg-gray-100 text-gray-900 py-2 rounded font-medium">
-          Sell
-        </button>
+      <div>
+        <SegmentedControlSingleChoice
+          defaultValue="buy"
+          onChange={(value) => console.log(value)}
+          options={[
+            { value: "buy", label: "Buy" },
+            { value: "sell", label: "Sell" },
+          ]}
+          size="sm"
+          selectedItemIndex={0}
+        />
       </div>
     </div>
   );
