@@ -10,6 +10,7 @@ interface P2PAdvertiserCardProps {
   rate: string;
   limits: string;
   time: string;
+  type?: "buy" | "sell";
   paymentMethods: string[];
 }
 
@@ -23,6 +24,7 @@ export const P2PAdvertiserCard = ({
   limits = "USD 10.00 - 100.00",
   time = "15 min",
   paymentMethods = ["Bank transfer", "Neteller", "PayPal"],
+  type = "buy",
 }: P2PAdvertiserCardProps) => {
   return (
     <div className="p-4 bg-white rounded-[4px] border border-[#DEE2E6]">
@@ -81,7 +83,7 @@ export const P2PAdvertiserCard = ({
           {paymentMethods.join(" | ")}
         </Text>
         <Button variant="primary" size="md">
-          Buy USD
+          {type === "buy" ? "Buy USD" : "Sell USD"}
         </Button>
       </div>
     </div>

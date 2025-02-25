@@ -2,13 +2,17 @@ import { Text, SegmentedControlSingleChoice } from "@deriv-com/quill-ui";
 import { Info } from "lucide-react";
 
 interface P2PBalanceProps {
-  balance: string;
+  balance?: string;
   currency?: string;
+  onChange?: (value: string) => void;
+  value?: string;
 }
 
 export const P2PBalance = ({
   balance = "1,234.56",
   currency = "USD",
+  onChange,
+  value = "buy",
 }: P2PBalanceProps) => {
   return (
     <div className="flex items-center justify-between p-4 bg-white">
@@ -25,14 +29,13 @@ export const P2PBalance = ({
       </div>
       <div>
         <SegmentedControlSingleChoice
-          defaultValue="buy"
-          onChange={(value) => console.log(value)}
+          value={value}
+          onChange={onChange}
           options={[
             { value: "buy", label: "Buy" },
             { value: "sell", label: "Sell" },
           ]}
           size="sm"
-          selectedItemIndex={0}
         />
       </div>
     </div>
