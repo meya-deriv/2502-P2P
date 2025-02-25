@@ -1,3 +1,5 @@
+import { Button, Typography } from "@deriv-com/quill-ui";
+
 interface P2PAdvertiserCardProps {
   name: string;
   isFollowing?: boolean;
@@ -22,33 +24,40 @@ export const P2PAdvertiserCard = ({
   paymentMethods = ["Bank transfer", "Neteller", "PayPal"],
 }: P2PAdvertiserCardProps) => {
   return (
-    <div className="p-4 border-b border-gray-200">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600">
-            {name.charAt(0)}
-          </div>
-          <span className="font-medium">{name}</span>
-          {isFollowing && (
-            <span className="text-xs text-green-600 border border-green-600 rounded px-2 py-0.5">
-              Following
-            </span>
-          )}
+    <div className="p-4 bg-white rounded-[4px] border border-[#DEE2E6]">
+      <div className="flex items-center gap-2 mb-2">
+        <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+          <Typography size="sm" className="font-bold">
+            M
+          </Typography>
         </div>
+        <Typography size="sm">{name}</Typography>
+        {isFollowing && (
+          <span className="text-xs text-[#85ACB0] border border-[#85ACB0] rounded px-2 py-0.5">
+            Following
+          </span>
+        )}
       </div>
 
-      <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
+      <div className="flex items-center gap-3 text-sm text-gray-600">
         <div className="flex items-center gap-1">
-          <span>⭐ {rating}</span>
+          <span>⭐</span>
+          <Typography size="xs">{rating}</Typography>
         </div>
-        <div>{orders} orders</div>
-        <div>{completion}% completion</div>
+        <Typography size="xs">•</Typography>
+        <Typography size="xs">{orders} orders</Typography>
+        <Typography size="xs">•</Typography>
+        <Typography size="xs">{completion}% completion</Typography>
       </div>
 
-      <div className="mt-3 text-lg font-medium">{rate}</div>
-      <div className="mt-1 text-sm text-gray-600">Limits: {limits}</div>
+      <Typography size="lg" className="font-bold mt-4">
+        {rate}
+      </Typography>
+      <Typography size="xs" color="secondary" className="mt-1">
+        Limits: {limits}
+      </Typography>
 
-      <div className="flex items-center gap-2 mt-2 text-sm text-gray-600">
+      <div className="flex items-center gap-2 mt-4 text-sm text-gray-600">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -63,16 +72,16 @@ export const P2PAdvertiserCard = ({
           <circle cx="12" cy="12" r="10" />
           <polyline points="12 6 12 12 16 14" />
         </svg>
-        {time}
+        <Typography size="xs">{time}</Typography>
       </div>
 
-      <div className="flex items-center justify-between mt-3">
-        <div className="text-sm text-gray-600">
+      <div className="flex items-center justify-between mt-4">
+        <Typography size="xs" color="secondary">
           {paymentMethods.join(" | ")}
-        </div>
-        <button className="bg-[#ff444f] text-white px-6 py-2 rounded font-medium">
+        </Typography>
+        <Button variant="primary" size="lg" className="rounded-full px-8">
           Buy USD
-        </button>
+        </Button>
       </div>
     </div>
   );
