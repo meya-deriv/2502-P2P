@@ -30,11 +30,11 @@ export const P2PBalance = ({
       <div>
         <SegmentedControlSingleChoice
           value={value}
-          onChange={onChange}
-          options={[
-            { value: "buy", label: "Buy" },
-            { value: "sell", label: "Sell" },
-          ]}
+          onChange={(idx) => {
+            if (idx === 0) onChange("buy");
+            else onChange("sell");
+          }}
+          options={[{ label: "Buy" }, { label: "Sell" }]}
           size="sm"
         />
       </div>
