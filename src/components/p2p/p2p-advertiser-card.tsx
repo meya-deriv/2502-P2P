@@ -82,9 +82,11 @@ export const P2PAdvertiserCard = ({
         <Text size="sm" color="secondary">
           {paymentMethods.join(" | ")}
         </Text>
-        <Button variant="primary" size="md">
+        <button
+          className={`px-6 py-2 text-white text-sm font-medium rounded-full transition-colors ${type === "buy" ? "bg-[#008832] hover:bg-[#008832]/90" : "bg-[#FF444F] hover:bg-[#FF444F]/90"}`}
+        >
           {type === "buy" ? "Buy USD" : "Sell USD"}
-        </Button>
+        </button>
       </div>
     </div>
   );

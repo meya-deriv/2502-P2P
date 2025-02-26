@@ -4,15 +4,15 @@ import { Info } from "lucide-react";
 interface P2PBalanceProps {
   balance?: string;
   currency?: string;
-  onChange?: (value: string) => void;
-  value?: string;
+  onChange: (value: string) => void;
+  value: string;
 }
 
 export const P2PBalance = ({
   balance = "1,234.56",
   currency = "USD",
   onChange,
-  value = "buy",
+  value,
 }: P2PBalanceProps) => {
   return (
     <div className="flex items-center justify-between p-4 bg-white">
@@ -30,7 +30,7 @@ export const P2PBalance = ({
       <div>
         <SegmentedControlSingleChoice
           value={value}
-          onChange={onChange}
+          onChange={(val) => onChange(val)}
           options={[
             { value: "buy", label: "Buy" },
             { value: "sell", label: "Sell" },
