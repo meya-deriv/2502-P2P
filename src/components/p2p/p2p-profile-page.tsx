@@ -11,7 +11,7 @@ export const P2PProfilePage = () => {
       <div className="p-4">
         <div className="bg-white rounded-[4px] border border-[#DEE2E6] p-4">
           <div className="flex items-center gap-3">
-            <Avatar text="John Doe" size="lg" />
+            <Avatar text="John" size="lg" />
             <div>
               <Text size="lg" bold>
                 John Doe
